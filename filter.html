@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="MyFirstApp">
+<head>
+	<meta charset="utf-8">
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+	<h1>My First Angular App</h1>
+	<div ng-controller="MyFirstController">
+		{{name | uppercase}}<br>
+		{{sayHello() | lowercase}}
+		<br>
+		Price : {{cost | currency : "SD" : 7}}
+		<br>
+		Original:{{showMsg()}}<br>
+		Custom Filter Msg:{{showFilteredMsg()}}<br>
+		Truth: {{showFilteredMsg() | truth :'Coder' : 'Student'}}<br>
+		BIG TRUTH : {{showFilteredMsg() | truth :'Coder' : 'Student' | uppercase}}<br>
+		<input type="text" ng-model="name" />
+	</div>
+</body>
+</html>
